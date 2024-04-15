@@ -1,11 +1,14 @@
-#+ATTR_HTML: :target _blank
-#+TODO: TODO MAYBE IN_PROGRESS | DONE CANCELED
+#+TODO: TODO BUG IN_PROGRESS | DONE CANCELED
 #+OPTIONS: tasks:nil
-* PODIUM
-** Introduction
-   *Podium* is an *E-Reader* application for *Music Scores*. It is currently under active development.\\
-
-   - [[https://www.studiop5.org/podium.html][/Click here to launch Podium in your browser/]]
+#+AUTHOR: HAXAH
+#+HTML_HEAD: <base target="_blank">
+#+HTML_HEAD_EXTRA: <style>* {font-family: "Gill Sans", sans-serif !important}</style>
+#+HTML_HEAD_EXTRA: <style>* {font-size: 30px !important}</style>
+#+TITLE: PODIUM
+#+ATTR_HTML: :target _blank
+* Introduction
+   *Podium* is an /E-Reader/ application for /Music Scores/. It is currently under active development,
+    but ready for beta-testing.\\
 
    Highlights:
    - 100% browser-based:
@@ -14,13 +17,17 @@
       - built for Google Chrome, but runs (mostly) on any modern desktop/tablet/smartphone browser
    - Experimental UI built around collapsable circular menu
    - An alternative to generic PDF viewers, customized for the layout and annotation of scores in PDF format
-      - not a music library: works with PDF files stored locally or on Google Drive
+      - not a music library: works with PDF files stored /locally/ or in the clound. Currently, /Google Drive/
+        is the only cloud provider supported (sigh).
       - uses PDF /annotations/ and /embedded document metadata/ to store user edits
-   - Works with:
-     - touch screens
-     - styluses: S-Pen, Apple Pencil, USI, ...
-     - mouse and keyboard
-   - Multiple layout schemes
+   - Works on:
+     - non touch screens, using mouse and keyboard
+     - touch screens, using:
+       - S-Pen
+       - Apple Pencil
+       - USI styluses
+       - your fingers!
+   - Multiple layout schemes:
      - book :: simulated physical book with animated page flips
      - scrolling :: vertical or horizontal, displaying a settable number of pages
      - table :: thumbnails of all pages (potentially overlapping), viewable at once
@@ -31,32 +38,65 @@
      - symbol tool, exposing all music glyphs from the included [[https://www.smufl.org/][SMuFL]]-compliant *Bravura* music font
    - Tools for practice sessions
      - metronome, including an animated conducting hand
-     - on-screen piano keyboard, with functions for assisted tuning<
+     - on-screen piano keyboard, with functions for assisted tuning
      - visualizer tool that continuously records the last 2 minutes (configurable) of
         a practice session, both audio and video, for instant playback
      - stopwatch and clock
-** Quick Start
-*** TODO write the quick start guide
-** Menu
-   When Podium is launched, it will display a gray screen with a circular menu:\\
-   [[./img/menu.png]] 
 
+* Quick Start
+    An intuitive way to get started is to launch Podium in your browser, then start playing with it. Refer
+    back to this manual when things get confusing.
+    
+#+ATTR_HTML: :style width:fit-content;background-color:#ccc;border-radius:8px;margin:20px;
+   [[https://www.studiop5.org/podium.html][/Click here to launch Podium in your browser/]]
 
-   This menu serves the same purpose as the menus of other interfaces. Its buttons, called /cells/, invoke
-   all the functionality of the app.
+* Menu
+   When Podium is launched, it displays a gray screen with a circular menu:
+#+CAPTION: Podium's circular menu
+#+NAME:  fig:menu
+#+ATTR_HTML: :width 800px
+   [[./assets/menu.png]] 
 
+   The menu serves a similar purpose to menus of other computer interfaces. It organizes a set of buttons,
+   called /cells/, that provide access to the app's functionality.
 
-   There are three parts to this menu.
-   1. grip :: The inner circle of the menu
-      - *drag* the grip to move the menu anywhere on screen
-        - the grip is painted to suggest a sandpaper-like texture. Whenever this texture appears in the app,
+   There are three parts to the menu:
+   1. *Grip*: The inner circle of the menu
+      - /drag/ on the grip to move the menu anywhere on screen
+        - The grip is painted to suggest a sandpaper-like texture. Whenever this texture appears in the app,
           dragging it will reposition its corresponding widget.
-        - the grip can be dragged to any edge of the screen, but will always be partially visible
-      - *tap* the grip to expand <-> collapse the menu
-        - collapse the menu to save screen space
-      - *long press* the /grip/ to *park* the menu in the upper-left corner of the screen
+        - While the grip can be dragged anywhere on screen, it cannot be dragged completely offscreen. It will always be
+          partially visible.
+      - /tap/ the grip to expand or collapse the menu
+        - Collapsing the menu saves screen space. Tap it again to expand the menu.
+      - /long press/ the grip to /park/ the menu in the upper-left corner of the screen
+        - Parking the menu is a convenience for quickly getting it out of the way when not needed.
+   2. <<disk>> *Disk*: the circular area consisting of 6 cells that surrounds the grip
+      - /tap/ on any disk cell (except /Screen/) to change which cells are available in the [[ring][ring]]
+        - The /Screen/ disk cell is unique. It does not have a corresponding ring: rather, it immediately toggles
+         full-screen display on/off.
+   3. <<ring>> *Ring*: the outer ring of cells
+      - There are actually 5 rings, but only one is available at a time, as determined by the currenly active [[disk][disk]] cell.
+        1. <<score-ring>> *Score*: contains cells for working with entire scores: opening a score, or creating a new,
+           empty score. Once opened, the score can be saved, printed, or closed.
+        2. <<layout-ring>> *Layout*: contains cells that customize the /layout/ of the the currently opened score.
+        3. <<pages-ring>> *Pages*: contains cells for adding, deleting, or duplicating the score's pages,  and for customizing
+           how the score's page numbers are displayed.
+        4. <<ink-ring>> *Ink*: contains cells for annotating the active score's active page.
+        5. <<move-ring>> *More*: contains cells that invoke app functionality not directly related to a score.
 
-*** TODO check out parking behaviour of expanded vs collapsed menu
+   A cell can be in one of three states:
+   1. Disabled: the cell's icon and text are displayed in a light grey color, showing that the cell's function is
+      not available in the current context. For example, in Figure [[fig:menu]], the /Close/, /Save/, and /Print/ disk cells
+      are disabled, as there is no open score for them to work on. Tapping a disabled cell will do nothing.
+   2. Enabled: the cell's icon and text are displayed in black, showing that the the cell's function is available by
+      /tapping/ (or, in some cases, /long pressing/) the cell.
+      - /long pressing/ on most cells launches a panel that customizes the cell's functionality.
+        - For some cells, there is no further functionality to customize. For such cells, a /long press/ is
+          equivalent to a /tap/.
+** TODO ensure that long press is equivalent to tap, if no long press is implemented
+   3. Active: the cell's background is illuminated, indicated that the cell's functionality is currently selected. In
+     Figure [[fig:menu]], the /Score/ cell if active.
 
-    2. The 
+   
 *** TODO finish writing this section
