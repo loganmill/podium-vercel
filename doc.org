@@ -1,0 +1,62 @@
+#+ATTR_HTML: :target _blank
+#+TODO: TODO MAYBE IN_PROGRESS | DONE CANCELED
+#+OPTIONS: tasks:nil
+* PODIUM
+** Introduction
+   *Podium* is an *E-Reader* application for *Music Scores*. It is currently under active development.\\
+
+   - [[https://www.studiop5.org/podium.html][/Click here to launch Podium in your browser/]]
+
+   Highlights:
+   - 100% browser-based:
+      - completely free, entirely open source, and totally unsupported
+      - no installion, no registration, no login, no file import.  Just use it!
+      - built for Google Chrome, but runs (mostly) on any modern desktop/tablet/smartphone browser
+   - Experimental UI built around collapsable circular menu
+   - An alternative to generic PDF viewers, customized for the layout and annotation of scores in PDF format
+      - not a music library: works with PDF files stored locally or on Google Drive
+      - uses PDF /annotations/ and /embedded document metadata/ to store user edits
+   - Works with:
+     - touch screens
+     - styluses: S-Pen, Apple Pencil, USI, ...
+     - mouse and keyboard
+   - Multiple layout schemes
+     - book :: simulated physical book with animated page flips
+     - scrolling :: vertical or horizontal, displaying a settable number of pages
+     - table :: thumbnails of all pages (potentially overlapping), viewable at once
+   - Annotation tools
+     - freehand line drawing tool
+     - text annotation tool
+     - [[https://en.wikipedia.org/wiki/Rastrum][rastrum]] tool for drawing staff lines
+     - symbol tool, exposing all music glyphs from the included [[https://www.smufl.org/][SMuFL]]-compliant *Bravura* music font
+   - Tools for practice sessions
+     - metronome, including an animated conducting hand
+     - on-screen piano keyboard, with functions for assisted tuning<
+     - visualizer tool that continuously records the last 2 minutes (configurable) of
+        a practice session, both audio and video, for instant playback
+     - stopwatch and clock
+** Quick Start
+*** TODO write the quick start guide
+** Menu
+   When Podium is launched, it will display a gray screen with a circular menu:\\
+   [[./img/menu.png]] 
+
+
+   This menu serves the same purpose as the menus of other interfaces. Its buttons, called /cells/, invoke
+   all the functionality of the app.
+
+
+   There are three parts to this menu.
+   1. grip :: The inner circle of the menu
+      - *drag* the grip to move the menu anywhere on screen
+        - the grip is painted to suggest a sandpaper-like texture. Whenever this texture appears in the app,
+          dragging it will reposition its corresponding widget.
+        - the grip can be dragged to any edge of the screen, but will always be partially visible
+      - *tap* the grip to expand <-> collapse the menu
+        - collapse the menu to save screen space
+      - *long press* the /grip/ to *park* the menu in the upper-left corner of the screen
+
+*** TODO check out parking behaviour of expanded vs collapsed menu
+
+    2. The 
+*** TODO finish writing this section
