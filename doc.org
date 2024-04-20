@@ -94,9 +94,8 @@
       - /long pressing/ on most cells launches a panel that customizes the cell's functionality.
         - For some cells, there is no further functionality to customize. For such cells, a /long press/ is
           equivalent to a /tap/.
-** TODO ensure that long press is equivalent to tap, if no long press is implemented
-   3. Active: the cell's background is illuminated, indicated that the cell's functionality is currently selected. In
-     Figure [[fig:menu]], the /Score/ cell if active.
-
-   
-*** TODO finish writing this section
+** TODO add logic to know when a score is edited, use this to toggle save
+** TODO add logic to warn when an unsaved edited score is closed
+** TODO implement the "freeze annotations" functionality
+** TODO implement print functionality
+** BUG when you resize a line, lock x and y so they can't be scaled independently
