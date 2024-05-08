@@ -15,19 +15,18 @@
       - completely free, entirely open source, and totally unsupported
       - no installion, no registration, no login, no file import.  Just use it!
       - built for Google Chrome, but runs (mostly) on any modern desktop/tablet/smartphone browser
-      - single html file
-   - Experimental UI built around collapsible circular menu
-   - An alternative to generic PDF viewers, customized for the layout and annotation of scores in PDF format
-      - not a music library: works with PDF files stored /locally/ or in the clound. Currently, /Google Drive/
-        is the only cloud provider supported (sigh).
+   - Modern UI featuring collapsible circular menu
+   - Alternative to generic PDF viewers, customized for the layout and annotation of scores in PDF format
+      - not a music library: works with PDF files stored /locally/ or in the cloud.
+        - Currently, /Google Drive/ is the only cloud provider supported (sigh).
       - uses PDF /annotations/ and /embedded document metadata/ to store user edits
    - Works on:
-     - non touch screens, using mouse and keyboard
      - touch screens, using:
        - S-Pen
        - Apple Pencil
        - USI styluses
        - your fingers!
+     - for non-touch screens, mouse/trackpad and keyboard fully supported
    - Multiple layout schemes:
      - book :: simulated physical book with animated page flips
      - scrolling :: vertical or horizontal, displaying a settable number of pages
