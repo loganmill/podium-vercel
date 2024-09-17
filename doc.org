@@ -10,6 +10,11 @@
    *Podium* is an /E-Reader/ application for /Music Scores/. It is currently under active development,
     but ready for beta-testing.\\
 
+     God keep me from ever completing anything. This whole book is but a draught—nay, but the draught of a draught.
+     Oh, Time, Strength, Cash, and Patience!
+      ---Moby Dick, coda of chapter 32.
+
+
    Highlights:
    - 100% browser-based:
       - completely free, entirely open source, and totally unsupported
