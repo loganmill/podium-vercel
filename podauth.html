@@ -2,19 +2,20 @@
 <html lang="en-US">
   <head>
     <title>Podium Authenticator</title>
+  </head>
+  <body style="background-color:#c9c9c9;opacity:0;transition:opacity 1.685s;">
+      <div style="font-size:3em;text-align:center;left:24vw;top:18vh;width:52vw;height:64vh;position:absolute;">
+          Authentication Complete<br>
+          <svg viewBox="0 0 24 26">
+        <path fill="#aaa" stroke="currentColor" stroke-width=".6" stroke-linejoin="round"
+          d="M4 23v-3h16v3h1.5h-19.5 M7 20v-14h10v14 M7 12h-2l-3 -10 h20l-3 10h-2"/>
+        <text x="10.7" y="14" font-size="6" font-style="italic">p</text>
+      </svg>
+      <b>Tap anywhere to return to Podium</b>
+    </div>
     <script>
       document.body.addEventListener("pointerup", () => window.close()) ;
-      setTimeout(() => document.body.style.fontSize="30px", 618) ;
-   </script>
-  </head>
-  <body style="font-size:0;background-color:#c9c9c9;transition:1.685s;">
-    <svg viewBox="0 0 24 24" style="font-size:1.4px" >
-      <path fill="#aaa" stroke="currentColor" stroke-width=".6" stroke-linejoin="round"
-        d="M4 23v-3h16v3h1.5h-19.5 M7 20v-14h10v14 M7 12h-2l-3 -10 h20l-3 10h-2"/>
-      <text x="11" y="11" font-size="6" font-style="italic">p</text>
-      <text x="8.5" y="16">Authentication</text>
-      <text x="9" y="18">Complete</text>
-      <text x="5" y="21.75" font-style="italic" font-size="1">Tap anywhere to return to Podium</text>
-    </svg>
+      setTimeout(() => document.body.style.opacity=1, .618) ;
+    </script>
   </body>
 </html>
